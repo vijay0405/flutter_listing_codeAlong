@@ -9,7 +9,10 @@ class ProductDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return WillPopScope(onWillPop: () {
+      Navigator.pop(context, false);
+      return Future.value(false);
+    },child: Scaffold(
         appBar: AppBar(
           title: Text(title + ' info'),
         ),
@@ -24,6 +27,6 @@ class ProductDetailPage extends StatelessWidget {
               ),padding: EdgeInsets.all(10.0),) 
             ],
           ),
-        );
-  }
+        ));
+    }
 }
