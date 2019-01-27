@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 import '../product_manager.dart';
 
 class ProductsPage extends StatelessWidget {
-  List<Map<String, String>> items;
-  final Function addProduct;
-  final Function deleteProduct;
+  List<Map<String, dynamic>> items;
 
-  ProductsPage(this.items, this.addProduct, this.deleteProduct);
+  ProductsPage(this.items);
 
 
   @override
@@ -32,6 +30,6 @@ class ProductsPage extends StatelessWidget {
         appBar: AppBar(
           title: Text("Listing"),
         ),
-        body: ProductManager(items, addProduct, deleteProduct));
+        body: ProductManager(items));
   }
 }
