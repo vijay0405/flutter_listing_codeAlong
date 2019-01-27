@@ -19,8 +19,8 @@ class ProductDetailPage extends StatelessWidget {
               Image.asset(imageUrl),
               Container(child: Text(title),padding: EdgeInsets.all(10.0),),
               Container(child: RaisedButton(
-                child: Text("back"),
-                onPressed: () => Navigator.pop(context),
+                child: Text("Remove"),
+                onPressed: () => Navigator.pop(context, true),
               ),padding: EdgeInsets.all(10.0),) 
             ],
           ),
