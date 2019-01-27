@@ -6,9 +6,22 @@ class ProductsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          appBar: AppBar(
-            title: Text("Listing"),
+        drawer: Drawer(
+          child: Column(
+            children: <Widget>[
+              AppBar(
+                automaticallyImplyLeading: false,
+                title: Text("choose"),),
+                ListTile(
+                  title: Text("Manage Products"),
+                  onTap: (){},
+                )
+            ],
           ),
-          body: ProductManager());
+        ),
+        appBar: AppBar(
+          title: Text("Listing"),
+        ),
+        body: ProductManager());
   }
 }
