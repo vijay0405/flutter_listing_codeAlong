@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import './pages/auth.dart';
 import './pages/productAdmin.dart';
 import './pages/products.dart';
 import './pages/product.dart';
@@ -35,7 +33,7 @@ class _MyappState extends State<Myapp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          brightness: Brightness.dark,
+          brightness: Brightness.light,
           primarySwatch: Colors.red,
           accentColor: Colors.teal),
       // home: AuthPage(),
