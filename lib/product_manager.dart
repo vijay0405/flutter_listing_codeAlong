@@ -4,7 +4,6 @@ import './products.dart';
 import './product_control.dart';
 
 class ProductManager extends StatefulWidget {
-
   final String StartingProduct;
 
   ProductManager(this.StartingProduct);
@@ -18,7 +17,7 @@ class ProductManager extends StatefulWidget {
 
 class _productManagerState extends State<ProductManager> {
   List<String> _items = [];
- 
+
   @override
   void initState() {
     super.initState();
@@ -40,10 +39,12 @@ class _productManagerState extends State<ProductManager> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Column(children: <Widget>[ Container(
-      margin: EdgeInsets.all(10.0),
-      child: ProductControl(_addProduct)
-
-    ),Products(_items)],);
+    return Column(
+      children: <Widget>[
+        Container(
+            margin: EdgeInsets.all(10.0), child: ProductControl(_addProduct)),
+            Expanded(child:Products(_items))
+      ],
+    );
   }
 }
