@@ -4,7 +4,7 @@ import './products.dart';
 import './product_control.dart';
 
 class ProductManager extends StatefulWidget {
-  final String StartingProduct;
+  final Map<String,String> StartingProduct;
 
   ProductManager({this.StartingProduct});
 
@@ -16,7 +16,7 @@ class ProductManager extends StatefulWidget {
 }
 
 class _productManagerState extends State<ProductManager> {
-  List<String> _items = [];
+  List<Map<String,String>> _items = [];
 
   @override
   void initState() {
@@ -32,7 +32,7 @@ class _productManagerState extends State<ProductManager> {
     super.didUpdateWidget(oldWidget);
   }
 
-  void _addProduct(String product) {
+  void _addProduct(Map<String,String> product) {
     setState(() {
       _items.add(product);
     });

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import './pages/product.dart';
 
 class Products extends StatelessWidget {
-  final List<String> items;
+  final List<Map<String,String>> items;
 
   Products(this.items);
 
@@ -11,16 +11,16 @@ class Products extends StatelessWidget {
     return Card(
       child: Column(
         children: <Widget>[
-          Image.asset('assets/food.jpg'),
-          Text(items[index]),
+          Image.asset(items[index]['image']),
+          Text(items[index]['title']),
           ButtonBar(
             alignment: MainAxisAlignment.center,
             children: <Widget>[
               FlatButton(
-                child: Text('Detais'),
+                child: Text("Details"),
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
-                    return ProductDetailPage();
+                    return ProductDetailPage(items[index]['title'] ,items[index]['image']);
                   }));
                 },
               )
